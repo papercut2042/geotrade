@@ -62,7 +62,7 @@ def monitor():
       
       global_news = get_global_news().split('\n')
       new_items = [item for item in global_news if item not in seen]
-      if global_news:
+      if new_items:
             agent.input(f"New geopolitical news: {global_news}. Analyze and update GTI scores for relevant regions. If any region's GTI score changes significantly, send an updated GeoTrade report to Discord. Keep it succinct and concise under 2000 characters. My current portfolio is  VAS.AX, VGS.AX, NVDA, AAPL, MSFT, SPY, QQQ, BTC-USD, ETH-USD, SOL-USD. Give a section outlining any recommended portfolio adjustments based on the latest geopolitical developments.")
             with open("seen.txt", "a") as f:            
                for item in new_items:
